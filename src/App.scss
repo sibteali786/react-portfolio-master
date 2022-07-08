@@ -20,3 +20,55 @@ input,
 textarea{
   font-family: 'Helvetica Neue';
 }
+
+.loader{
+  font-size: 10px;
+  color: #FFF;
+  font-family: "Coolvetica";
+  letter-spacing: 5px;
+  font-weight: 400;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  height: 50px;
+  animation: fadeOut 2s 0.5s;
+  animation-fill-mode: forwards;
+}
+.loader:after{
+  content: '';
+  height: 4px;
+  width:50%;
+  display: block;
+  background: #ffd700;
+  margin-top: 1rem;
+  margin-left: -3rem;
+  animation: 2s lineGrow linear infinite;
+}
+
+@keyframes lineGrow {to{width: 100%;}}
+
+.logo{
+  display: block;
+  padding:8px 0;
+  text-align: center;
+
+  img{
+      display: block;
+      margin:8px auto;
+      width:24px;
+      height:auto;
+
+      &.sub-logo{
+          width:30px;
+
+      }
+  }
+  span{
+    color:rgb(124, 119, 119);
+  }
+}
