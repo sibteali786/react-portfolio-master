@@ -82,13 +82,11 @@
   }
 
   /* Config */
-$color-bg: #1e1e1e;
+
 $color-particle: #fff;
-$spacing: 2560px;
-$time-1: 60s;
-$time-2: 120s;
-$time-3: 180s;
-$time-4: 200s;
+$spacing: 2000px;
+$time-1: 50s;
+$time-4: 100s;
 
 /* mixins */
 @function particles($max) {
@@ -119,30 +117,30 @@ $time-4: 200s;
 
 .particle-1 {
   animation: animParticle $time-1 linear infinite;
-  @include particles(1000);
-  height: 2px;
-  width: 2px;
+  @include particles(500);
+  height: 1px;
+  width: 1px;
 }
 
 .particle-1:after {
-  @include particles(900);
-  height: 2px;
-  width: 2px;
+  @include particles(300);
+  height: 1px;
+  width: 1px;
 }
 
 
 
 .particle-4 {
   animation: animParticle $time-4 linear infinite;
-  @include particles(1200);
-  height: 1px;
-  width: 1px;
+  @include particles(200);
+  height: 4px;
+  width: 4px;
 }
 
 .particle-4:after {
-  @include particles(700);
-  height: 1px;
-  width: 1px;
+  @include particles(200);
+  height: 4px;
+  width: 4px;
 }
 
 @keyframes animParticle {
