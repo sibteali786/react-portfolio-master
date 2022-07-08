@@ -1,5 +1,5 @@
 $primaryColor:#ffd700;
-@import 'animate.css';
+@import './../node_modules/animate.css/animate.css';
 
 @font-face {
   font-family: "Helvetica Neue";
@@ -36,18 +36,30 @@ textarea{
   bottom: 0;
   width: 300px;
   height: 50px;
-  animation: fadeOut 2s 0.5s;
+  animation: slideInLeft 1s,slideOutRight 1s 1s;
   animation-fill-mode: forwards;
 }
 .loader:after{
   content: '';
   height: 4px;
-  width:50%;
+  width:0%;
   display: block;
   background: #ffd700;
   margin-top: 1rem;
-  margin-left: -3rem;
-  animation: 2s lineGrow linear infinite;
+  margin-left: -1rem;
+  animation: 3s lineGrow linear forwards;
+}
+.loader:before{
+  content: '';
+  height: 4px;
+  width:100%;
+  display: block;
+  position: absolute;
+  bottom: -57px;
+  background: #4ce6b32f;
+  margin-top: 1rem;
+  margin-left: -1rem;
+  animation: 3s lineGrow linear forwards;
 }
 
 @keyframes lineGrow {to{width: 100%;}}

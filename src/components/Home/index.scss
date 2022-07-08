@@ -33,7 +33,7 @@
             margin-top: 18px;
             margin-left:20px;
             opacity: 0.6;
-            animation: fadeIn 1s 1.7s backwards;
+            animation: fadeIn 1s 0.2s backwards;
         }
         img{
             width:32px;
@@ -41,7 +41,7 @@
             opacity: 0;
             height: auto;
             animation: rotateIn 1s linear both;
-            animation-delay: 1.4s;
+            animation-delay: 0.3s;
         }
     }
 
@@ -52,7 +52,7 @@
         font-size: 11px;
         font-family: sans-serif;
         letter-spacing: 3px;
-        animation: fadeIn 1s 1.8s backwards;
+        animation: fadeIn 1s 0.2s backwards;
     }
 
     .flat-button{
@@ -66,7 +66,7 @@
         border: 1px solid #ffd700;
         margin-top:25px ;
         float: left;
-        animation:fadeIn 1s 1.8s backwards;
+        animation:fadeIn 1s 0.2s backwards;
         white-space: nowrap;
         
         &:hover{

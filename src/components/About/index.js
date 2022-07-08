@@ -14,21 +14,25 @@ import LogoS from './../../assets/images/logo-s.png';
 import LogoSubtitle from './../../assets/images/Sibt-e-Ali.png';
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
+  const [loading,setLoading] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
+    const animTimer = setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 4000);
-  }, []);
+    const loaderTimer = setTimeout(() => {
+        setLoading(true);
+      }, 2000); 
+  }, [loading]);
 
   return (
     <>
-      <div className="container about-page">
+    {loading ? (<div className="container about-page">
         <div className="text-zone">
           <h1>
             <AnimtaedLetters
               letterClass={letterClass}
               strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
-              idx={15}
+              idx={5}
             />
           </h1>
           <p>
@@ -69,8 +73,7 @@ const About = () => {
           <div class="particle particle-1"></div>
           <div class="particle particle-4"></div>
         </div>
-      </div>
-      <div class="loader logo">
+      </div>)  : <div class="loader logo">
         <img src={LogoS} alt="logo" />
         <img
           className="sub-logo"
@@ -80,7 +83,9 @@ const About = () => {
         />
         <br />
         <span>Sibteali Baqar Working</span>
-      </div>
+      </div>}
+      
+      
     </>
   );
 };

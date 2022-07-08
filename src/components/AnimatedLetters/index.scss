@@ -1,7 +1,7 @@
 .text-animate{
     display: inline-block;
     opacity: 0;
-    animation: bounceIn 1s 1s;
+    animation: bounceIn 1.2s 0.3s;
     animation-fill-mode: forwards;
     min-width: 10px; 
 
@@ -19,6 +19,6 @@
 
 @for $i from 1 through 35 {
     .text-animate._#{$i}{
-        animation-delay: #{calc($i/10)}s;
+        animation-delay: #{calc($i/15)}s;
     }
 }
