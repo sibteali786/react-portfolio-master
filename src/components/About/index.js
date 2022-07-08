@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import AnimtaedLetters from '../AnimatedLetters';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3, faGitAlt, faHtml5, faJsSquare, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import {
+  faCss3,
+  faGitAlt,
+  faHtml5,
+  faJsSquare,
+  faNodeJs,
+  faReact,
+} from '@fortawesome/free-brands-svg-icons';
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   useEffect(() => {
@@ -35,28 +42,31 @@ const About = () => {
           by passion
         </p>
       </div>
-      <div className="stage-cube-font">
+      <div className="stage-cube-cont">
         <div className="cubespinner">
           <div className="face1">
-            <FontAwesomeIcon icon={faReact} color="#5Ed4f4" />
-          </div>
-          <div className="face2">
-            <FontAwesomeIcon icon={faHtml5} color="#f06529" />
-          </div>
-          <div className="face3">
-            <FontAwesomeIcon icon={faCss3} color="#28a4d9" />
-          </div>
-          <div className="face4">
             <FontAwesomeIcon icon={faNodeJs} color="#83CD29" />
           </div>
+          <div className="face2">
+            <FontAwesomeIcon icon={faHtml5} color="#F06529" />
+          </div>
+          <div className="face3">
+            <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+          </div>
+          <div className="face4">
+            <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+          </div>
           <div className="face5">
-            <FontAwesomeIcon icon={faJsSquare} color="#efd81d" />
+            <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
           </div>
           <div className="face6">
-            <FontAwesomeIcon icon={faGitAlt} color="#ec4d28" />
+            <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
           </div>
         </div>
+        <div class="particle particle-1"></div>
+        <div class="particle particle-4"></div>
       </div>
+
     </div>
   );
 };
