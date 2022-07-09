@@ -26,10 +26,10 @@ const Home = () => {
   ];
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const animTimer = setTimeout(() => {
+   setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 4000);
-    const loaderTimer = setTimeout(() => {
+    setTimeout(() => {
       setLoading(true);
     }, 2000);
   }, []);
