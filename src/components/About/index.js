@@ -76,16 +76,21 @@ const About = () => {
           </div>
         </div>
       ) : (
-        <div class="loader logo">
-          <img src={LogoS} alt="logo" />
-          <img
-            className="sub-logo"
-            style={{ width: '60px' }}
-            src={LogoSubtitle}
-            alt="logo subtitle"
-          />
-          <br />
-          <span>Sibteali Baqar Working</span>
+        <div className="loaderGrow">
+          <div class="loader logo">
+            <img src={LogoS} alt="logo" />
+            <img
+              className="sub-logo"
+              style={{ width: '60px' }}
+              src={LogoSubtitle}
+              alt="logo subtitle"
+            />
+            <br />
+          </div>
+          <div className="containerGrow">
+            <div className="lineGrow"></div>
+            <p>Sibteali Baqar Working</p>
+          </div>
         </div>
       )}
     </>

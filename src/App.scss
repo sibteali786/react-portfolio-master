@@ -20,13 +20,11 @@ input,
 textarea{
   font-family: 'Helvetica Neue';
 }
-
+.loaderGrow{
+  animation: slideInLeft 0.3s,slideOutRight 0.3s 1.6s;
+  animation-fill-mode: forwards;
+}
 .loader{
-  font-size: 10px;
-  color: #FFF;
-  font-family: "Coolvetica";
-  letter-spacing: 5px;
-  font-weight: 400;
   display: block;
   position: absolute;
   left: 0;
@@ -36,29 +34,49 @@ textarea{
   bottom: 0;
   width: 100%;
   height: 50px;
-  animation: slideInLeft 0.3s,slideOutRight 0.3s 1.6s;
-  animation-fill-mode: forwards;
 }
-.loader:after{
+.containerGrow{
+  width: 40%;
+  margin: auto;
+  height: 100vh;
+  font-family: "Coolvetica";
+  letter-spacing: 5px;
+  font-weight: 400;
+  color: #FFF;
+  font-size: 10px;
+  p{
+    color:rgb(124, 119, 119);
+    text-align: center;
+    position: relative;
+    top: 56%;
+  }
+}
+.lineGrow{
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 61%;
+  bottom: 0;
+  
+}
+.lineGrow:after{
   content: '';
-  height: 4px;
+  height: 1px;
   width:0%;
   display: block;
   background: #ffd700;
   margin-top: 1rem;
-  margin-left: -1rem;
   animation: 1.2s 0.4s lineGrow linear forwards;
 }
-.loader:before{
+.lineGrow:before{
   content: '';
-  height: 4px;
+  height: 1px;
   width:100%;
   display: block;
   position: absolute;
-  bottom: -57px;
+  bottom: 0;
   background: #4ce6b32f;
   margin-top: 1rem;
-  margin-left: -1rem;
 }
 
 @keyframes lineGrow {to{width: 100%;}}
@@ -79,7 +97,5 @@ textarea{
 
       }
   }
-  span{
-    color:rgb(124, 119, 119);
-  }
+  
 }
