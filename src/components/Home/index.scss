@@ -12,6 +12,7 @@
         color:#fff;
         font-size: 53px;
         margin:0;
+        line-height: 53px;
         font-family: "Coolvetica";
         font-weight: 400;
         &:before{
@@ -33,7 +34,7 @@
             margin-top: 18px;
             margin-left:20px;
             opacity: 0.6;
-            animation: fadeIn 1s 0.2s backwards;
+            animation: fadeIn 1s 0s backwards;
         }
         img{
             width:32px;
@@ -41,7 +42,7 @@
             opacity: 0;
             height: auto;
             animation: rotateIn 1s linear both;
-            animation-delay: 0.3s;
+            animation-delay: 0s;
         }
     }
 
@@ -52,7 +53,7 @@
         font-size: 11px;
         font-family: sans-serif;
         letter-spacing: 3px;
-        animation: fadeIn 1s 0.2s backwards;
+        animation: fadeIn 1.5s 1.7s backwards;
     }
 
     .flat-button{
@@ -66,7 +67,7 @@
         border: 1px solid #ffd700;
         margin-top:25px ;
         float: left;
-        animation:fadeIn 1s 0.2s backwards;
+        animation:fadeIn 1.5s 1.7s backwards;
         white-space: nowrap;
         
         &:hover{

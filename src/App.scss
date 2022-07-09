@@ -34,9 +34,9 @@ textarea{
   margin: auto;
   top: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
   height: 50px;
-  animation: slideInLeft 1s,slideOutRight 1s 1s;
+  animation: slideInLeft 0.3s,slideOutRight 0.3s 1.6s;
   animation-fill-mode: forwards;
 }
 .loader:after{
@@ -47,7 +47,7 @@ textarea{
   background: #ffd700;
   margin-top: 1rem;
   margin-left: -1rem;
-  animation: 3s lineGrow linear forwards;
+  animation: 1.2s 0.4s lineGrow linear forwards;
 }
 .loader:before{
   content: '';
@@ -59,7 +59,6 @@ textarea{
   background: #4ce6b32f;
   margin-top: 1rem;
   margin-left: -1rem;
-  animation: 3s lineGrow linear forwards;
 }
 
 @keyframes lineGrow {to{width: 100%;}}
