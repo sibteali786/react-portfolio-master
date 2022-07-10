@@ -5,6 +5,7 @@ import LogoSubtitle from './../../assets/images/Sibt-e-Ali.png';
 import AnimtaedLetters from '../AnimatedLetters';
 import TextField from '@material-ui/core/TextField';
 import emailjs from '@emailjs/browser';
+import { MapContainer, TileLayer,Marker, Popup } from 'react-leaflet';
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const [loading, setLoading] = useState(false);
@@ -99,6 +100,23 @@ const Contact = () => {
                 </ul>
               </form>
             </div>
+          </div>
+          <div className="info-map">
+            Sibteali Baqar,
+            <br/>
+            Pakistan
+            <br/>
+            Liaquat Hostel,EME, Peshawar Road, Rawalpindi
+            <br/>
+            <span>sibteali786@gmail.com</span>
+          </div>
+          <div className="map-wrap">
+            <MapContainer center={[33.62226623996949, 72.95978886655953]} zoom={14}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={[33.62226623996949, 72.95978886655953]}>
+              <Popup>Sibteali is here, lets have a cup of tea :)</Popup>
+            </Marker>
+            </MapContainer>
           </div>
         </div>
       ) : (
