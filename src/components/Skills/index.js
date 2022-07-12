@@ -86,7 +86,7 @@ const Skills = () => {
         <a href="https://www.linkedin.com/in/syed-sibteali-baqar-03167a17a/"> LinkedIn</a> and
         <a href="https://github.com/sibteali786"> GitHub</a>.
         Also have a look at my 
-        <a target="_blank" href="src\assets\SibtealiBaqarMERN.pdf">CV</a>
+        <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1xbxa9GK3U7F2ThGCiiYHGD9rTSlqByl1/view?usp=sharing">CV</a>
       </p>
     </div>
       <div className="tagcloud">
