@@ -68,7 +68,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="loaderGrow">
-          <div class="loader logo">
+          <div className="loader logo">
             <img src={LogoS} alt="logo" />
             <img
               className="sub-logo"
