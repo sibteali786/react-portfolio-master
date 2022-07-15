@@ -55,6 +55,9 @@
                 &:after{
                     opacity: 1;
                 }
+                i{
+                    opacity: 0;
+                }
             }
     
             &:after{
@@ -89,6 +92,11 @@
         a.skills-link{
             &::after{
                 content: "Skills";
+            }
+        }
+        a.projects-link{
+            &::after{
+                content: "Projects";
             }
         }
         a.active{
