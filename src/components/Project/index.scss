@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -24,11 +26,15 @@
 	text-indent: -9999px;
 	box-shadow: none;
 	border: none;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0, 0, 0, 1);
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .slider__navi button.active {
-	background: rgba(255,255,255,1);
+	background: #ffd700;
 }
 
 body {
@@ -51,7 +57,7 @@ body {
 	-moz-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
 	-o-flex-flow: row wrap;
-	flex-flow: row wrap; 
+	flex-flow: row wrap;
 	-webkit-justify-content: flex-start;
 	-moz-justify-content: flex-start;
 	-ms-justify-content: flex-start;
@@ -75,25 +81,26 @@ body {
 
 .text--big {
 	font-family: 'Poppins', sans-serif;
-	font-size: 7.5em;
-	font-weight: 700;
-	line-height: 110px;
-  margin-left: -8px;
+	font-size: 5.5em;
+	font-weight: 600;
+	line-height: 50px;
+	margin-left: -8px;
 }
 
 .text--normal {
 	font-size: 13px;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 1);
 	line-height: 22px;
 	margin-top: 25px;
 }
 
 .text__background {
+	z-index: -1;
 	font-family: 'Poppins', sans-serif;
 	position: absolute;
 	left: 72px;
-	bottom: -60px;
-	color: rgba(0,0,0,0.05);
+	bottom: -100px;
+	color: rgba(0, 0, 0, 0.05);
 	font-size: 170px;
 	font-weight: 700;
 }
@@ -189,29 +196,51 @@ body {
 	margin-left: 80px;
 	width: 55%;
 	opacity: 1;
-	transform: translate3d(0,0,0);
+	transform: translate3d(0, 0, 0);
 	transition: transform 0.2s linear 0.2s, opacity 0.1s linear 0.2s;
+
+	a {
+		color: #ffd700;
+		font-size: 13px;
+		font-weight: 400;
+		letter-spacing: 4px;
+		font-family: sans-serif;
+		text-decoration: none;
+		padding: 10px 18px;
+		border: 1px solid #ffd700;
+		margin-top: 25px;
+		float: left;
+		animation: fadeIn 1.5s 1.7s backwards;
+		white-space: nowrap;
+
+		&:hover {
+			background: #ffd700;
+			color: #333
+		}
+	}
 }
 
 .pokemon__img {
+	z-index: -1;
 	position: absolute;
-	bottom: 20px;
-	right: 15%;
-	max-height: 40vw;
+	bottom: 120px;
+	right: 0;
+	max-height: 30vw;
+	border-radius: 1rem;
 	opacity: 1;
-	transform: translate3d(0,0,0);
+	transform: translate3d(0, 0, 0);
 	transition: opacity 0.43s 0.6s, transform 0.4s 0.65s cubic-bezier(0, 0.88, 0.4, 0.93);
 }
 
 /* Animate-START point */
 
 .flex__container.animate--start .flex__content {
-	transform: translate3d(0,-200%,0);
+	transform: translate3d(0, -200%, 0);
 	opacity: 0;
 }
 
 .flex__container.animate--start .pokemon__img {
-	transform: translate3d(-200px,0,0);
+	transform: translate3d(-200px, 0, 0);
 	opacity: 0;
 }
 
@@ -226,11 +255,11 @@ body {
 }
 
 .flex__container.animate--end .flex__content {
-	transform: translate3d(0,200%,0);
+	transform: translate3d(0, 200%, 0);
 	opacity: 0;
 }
 
 .flex__container.animate--end .pokemon__img {
-	transform: translate3d(200px,0,0);
+	transform: translate3d(200px, 0, 0);
 	opacity: 0;
 }
