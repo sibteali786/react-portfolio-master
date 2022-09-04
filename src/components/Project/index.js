@@ -9,7 +9,7 @@ const Project = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
   const octokit = new Octokit({
-    auth: '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',
+    auth: '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',
   });
   useEffect(() => {
     if (repos.length !== 0) {
