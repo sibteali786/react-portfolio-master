@@ -2,52 +2,75 @@ import React, { useState, useEffect } from 'react';
 import './index.scss';
 import LogoS from './../../assets/images/logo-s.png';
 import LogoSubtitle from './../../assets/images/Sibt-e-Ali.png';
+import { Octokit } from 'octokit';
+
 const Project = () => {
-  const [loading, setLoading] = useState(false);
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const octokit = new Octokit({
+    auth: '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',
+  });
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
-    }, 2000);
-  }, [loading]);
+    if (repos.length !== 0) {
+      setLoading(false);
+    }
+    const fetchRepos = async () => {
+      const response = await octokit.request(
+        'GET /users/sibteali786/starred',
+        {}
+      );
+      setRepos(response.data);
+    };
+    if (repos.length === 0 && loading) {
+      fetchRepos().catch(console.error);
+    }
+  }, [loading, repos]);
+
   const sliderHandler = (e) => {
     e.preventDefault();
     // get current slide
-    var current = document.querySelector('.flex--active').getAttribute('data-slide'); // gives value of data-slide attribute
-      // get button data-slide
-    var next = e.target.getAttribute('data-slide');   // getting current element which was clicked 
-    console.log(next,current);
-    document.querySelectorAll('.slide-nav').forEach(element => {
-      element.classList.remove('active')
+    var current = document
+      .querySelector('.flex--active')
+      .getAttribute('data-slide'); // gives value of data-slide attribute
+    // get button data-slide
+    var next = e.target.getAttribute('data-slide'); // getting current element which was clicked
+    console.log(next, current);
+    document.querySelectorAll('.slide-nav').forEach((element) => {
+      element.classList.remove('active');
     });
-    e.currentTarget.classList.add('active')
+    e.currentTarget.classList.add('active');
 
-    if(current === next){
-      return false
-    }else{
+    if (current === next) {
+      return false;
+    } else {
       // add class flex--preStart to the div of class flex-container where data-slide = current event slide
-      document.querySelectorAll('.flex__container').forEach(element => {
-        if(element.getAttribute('data-slide') === next){
-          element.classList.add('flex--preStart')
+      document.querySelectorAll('.flex__container').forEach((element) => {
+        if (element.getAttribute('data-slide') === next) {
+          element.classList.add('flex--preStart');
         }
       });
-      document.querySelector('.flex--active').classList.add('animate--end')
+      document.querySelector('.flex--active').classList.add('animate--end');
       setTimeout(() => {
         // $('.flex--preStart').removeClass('animate--start flex--preStart').addClass('flex--active');
-        document.querySelector('.flex--preStart').classList.remove('animate--start','flex--preStart');
-        document.querySelectorAll('.flex__container').forEach(element => {
-          if(element.getAttribute('data-slide') === next){
-            element.classList.add('flex--active')
+        document
+          .querySelector('.flex--preStart')
+          .classList.remove('animate--start', 'flex--preStart');
+        document.querySelectorAll('.flex__container').forEach((element) => {
+          if (element.getAttribute('data-slide') === next) {
+            element.classList.add('flex--active');
           }
         });
         // $('.animate--end').addClass('animate--start').removeClass('animate--end flex--active');
         document.querySelector('.animate--end').classList.add('animate--start');
-        document.querySelector('.animate--end').classList.remove('animate--end','flex--active')
+        document
+          .querySelector('.animate--end')
+          .classList.remove('animate--end', 'flex--active');
       }, 800);
     }
   };
   return (
     <>
-      {loading ? (
+      {!loading && repos.length !== 0 ? (
         <>
           <div id="slider__warpper">
             <div
@@ -177,38 +200,35 @@ const Project = () => {
             <button
               className="slide-nav active"
               data-slide="1"
-              onClick={ e => sliderHandler(e)}
+              onClick={(e) => sliderHandler(e)}
             >
               pikachu
             </button>
             <button
-              
               className="slide-nav"
               data-slide="2"
-              onClick={e => sliderHandler(e)}
+              onClick={(e) => sliderHandler(e)}
             >
               piplup
             </button>
             <button
-              
               className="slide-nav"
               data-slide="3"
-              onClick={e => sliderHandler(e)}
+              onClick={(e) => sliderHandler(e)}
             >
               blaziken
             </button>
             <button
-              
               className="slide-nav"
               data-slide="4"
-              onClick={e => sliderHandler(e)}
+              onClick={(e) => sliderHandler(e)}
             >
               dialga
             </button>
             <button
               className="slide-nav"
               data-slide="5"
-              onClick={e => sliderHandler(e)}
+              onClick={(e) => sliderHandler(e)}
             >
               zekrom
             </button>
