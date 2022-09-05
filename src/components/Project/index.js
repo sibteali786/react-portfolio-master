@@ -9,7 +9,7 @@ const Project = () => {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
   const octokit = new Octokit({
-    auth: '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',
+    auth: process.env.CLIENT_ID,
   });
   useEffect(() => {
     if (repos.length !== 0) {
@@ -36,7 +36,6 @@ const Project = () => {
       .getAttribute('data-slide'); // gives value of data-slide attribute
     // get button data-slide
     var next = e.target.getAttribute('data-slide'); // getting current element which was clicked
-    console.log(next, current);
     document.querySelectorAll('.slide-nav').forEach((element) => {
       element.classList.remove('active');
     });
